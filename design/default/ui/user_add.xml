@@ -1,4 +1,7 @@
-<window  anim_hint="htranslate" text="User New" v-model="user_add" children_layout="default(h=40,c=2,m=5,s=10)">
+<window  anim_hint="htranslate" text="User New" v-model="user_add"
+    v-on:key_up_before_children:up="{key_up}"
+    v-on:key_up_before_children:down="{key_down}"
+    children_layout="default(h=40,c=2,m=5,s=10)">
  <label text="User Name:"/>
  <edit name="name" v-data:text="{name, Trigger=Changing}}"/>
   

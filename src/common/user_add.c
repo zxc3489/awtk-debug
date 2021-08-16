@@ -63,3 +63,15 @@ ret_t user_add_add(user_add_t* user_add) {
 
   return RET_OK;
 }
+
+ret_t user_add_key_up(user_add_t* user_add)
+{
+  log_error("======%s\n",__FUNCTION__);
+  return RET_OK;
+}
+
+ret_t user_add_key_down(user_add_t* user_add)
+{
+  log_error("======%s\n",__FUNCTION__);
+  return RET_OK;
+}

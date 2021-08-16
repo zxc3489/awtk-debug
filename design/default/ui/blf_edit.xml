@@ -1,0 +1,28 @@
+<window v-model="blf_edit" style="dark"
+        v-on:key_up_before_children:up="{key_up}"
+        v-on:key_up_before_children:down="{key_down}"
+        >
+    <list_view x="0" y="0" w="100%" h="-35" item_height="40">
+        <scroll_view name="column" x="0" y="0" w="100%" h="100%">
+            <!--线路-->
+            <list_item focusable="true" 
+                       v-data:focused="{$selected==0}"
+                       children_layout="default(rows=1,s=0)">
+                <label w="20%" style="status_item_key" style:text_align_h="c" tr_text='phone_id'/>
+                <label w="65%" style="status_item_key" style:text_align_h="c" v-data:text='{$phone_id+1}'/>
+                <label w="15%" text="< >"/>
+            </list_item>
+            <list_item focusable="true" 
+                       v-data:focused="{$selected==1}"
+                       children_layout="default(rows=1,s=0)">
+                <label w="20%" style="status_item_key" style:text_align_h="c" tr_text='account'/>
+                <edit w="80%" style:text_align_h="right"
+                      name="call_hotline_number" max="32" select_none_when_focused="true"
+                      focusable="true" v-data:focused='{$selected==1}'
+                      v-on:key_down_before_children:f3="{SendKey, Args=backspace}"
+                      v-data:value='{label, Trigger=Changing}'/>
+            </list_item>
+
+        </scroll_view>
+    </list_view>
+</window>

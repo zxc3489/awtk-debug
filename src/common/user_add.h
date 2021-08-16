@@ -81,6 +81,27 @@ bool_t user_add_can_add(user_add_t* user_add);
  */
 ret_t user_add_add(user_add_t* user_add);
 
+/**
+ * @method user_add_key_up
+ * key up。
+ *
+ * @annotation ["command"]
+ * @param {user_add_t*} user_add user_add对象。
+ *
+ * @return {ret_t} 返回RET_OK表示成功，否则表示失败。
+ */
+ret_t user_add_key_up(user_add_t* user_add);
+
+/**
+ * @method user_add_key_down
+ * key down。
+ *
+ * @annotation ["command"]
+ * @param {user_add_t*} user_add user_add对象。
+ *
+ * @return {ret_t} 返回RET_OK表示成功，否则表示失败。
+ */
+ret_t user_add_key_down(user_add_t* user_add);
 END_C_DECLS
 
 #endif /*TK_USER_ADD_H*/
